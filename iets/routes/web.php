@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +25,10 @@ Route::get('/products/create', [ProductsController::class, 'create']) -> name('p
 Route::put('/products/{id}', [ProductsController::class, 'store']) -> name('products.store');
 Route::get('/products/{products}/edit', [ProductsController::class, 'edit']) -> name('products.edit');
 Route::delete('/products/{products}/destroy', [ProductsController::class, 'destroy']) -> name('products.destroy');
+
+Route::get('/orders/create', [OrderController::class, 'create']) -> name('orders.create');
+Route::post('/orders', [OrderController::class, 'store']);
+
 });
 
 require __DIR__.'/auth.php';
