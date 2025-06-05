@@ -14,11 +14,9 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
-                <th>Stock</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Stock</th>                
             </tr>
-           <form method="POST" action="{{ route('orders') }}">
+           <form method="POST" action="{{ route('orders.create') }}">
     @csrf
     <table>
         <thead>
@@ -28,9 +26,7 @@
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
-                <th>Stock</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>Stock</th>               
             </tr>
         </thead>
         <tbody>
@@ -43,17 +39,12 @@
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->description }}</td>
                     <td>{{ $product->price }}</td>
-                    <td>{{ $product->stock }}</td>
-                    
+                    <td>{{ $product->stock }}</td>                    
                 </tr>
             @endforeach
         </tbody>
     </table>
-
     <button type="submit">Submit Selected Products</button>
-</form>
-
-        </table>
-    </div>   
+</form>      
 </body>
 </html>
